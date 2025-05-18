@@ -1,43 +1,66 @@
-# PosturePro: Real-Time Posture Detection System
+# PosturePro Python Application
 
-PosturePro is a real-time posture detection tool designed to help users maintain healthy posture by identifying and alerting them to poor posture. Our system offers both a Python GUI application and a web-based solution to cater to different user preferences.
+This directory contains the desktop version of PosturePro built with Python, OpenCV, and MediaPipe.
 
-## Project Overview
+## Prerequisites
+- Python 3.8 or higher
+- Webcam
+- Operating System: Windows/Linux/macOS
 
-- **Purpose**: Detect poor posture among university staff in real-time and provide instant feedback to promote healthier sitting habits.
-- **Technology**: Uses computer vision and machine learning for accurate posture detection
-- **Key Features**:
-  - Real-time posture analysis and alerts
-  - Visual feedback indicating good or poor posture
-  - Tracking of neck and torso angles for detailed posture assessment
-  - Available in both desktop and web formats
+## Installation
 
-## Applications
+1. **Navigate to the Python app directory**
+```bash
+cd python-app
+```
 
-The project contains two main applications:
+2. **Create a virtual environment (recommended)**
+```bash
+python -m venv venv
 
-1. **Python GUI Application** (`/python-app`)
-   - Desktop-based solution using OpenCV and MediaPipe
-   - Direct webcam integration
-   - Low-latency processing
-   - [Setup Instructions](./python-app/README.md)
+# For Windows
+venv\Scripts\activate
 
-2. **Web Application** (`/web-app`)
-   - Browser-based solution using MediaPipe
-   - No installation required
-   - Cross-platform compatibility
-   - [Setup Instructions](./docs/README.md)
+# For Unix or MacOS
+source venv/bin/activate
+```
 
-## How It Works
+3. **Install Required Packages**
+```bash
+pip install -r requirements.txt
+```
 
-- **Body Tracking**: Utilizes advanced computer vision to detect key body points like shoulders, neck, and hips
-- **Posture Analysis**: Calculates metrics such as shoulder width and neck and torso angles
-- **Feedback**: Real-time alerts are displayed for poor posture, with colors indicating alignment status
+## Running the Application
 
-## License
+1. **Start the application**
+```bash
+python posture_detection.py
+```
 
-**All Rights Reserved.** Unauthorized use, reproduction, or distribution of this code is prohibited.
+2. **Using the Application**
+- Allow camera access when prompted
+- Position yourself so that your upper body is visible in the frame
+- The application will begin tracking your posture automatically
+- Follow the on-screen instructions for optimal posture detection
 
-## Disclaimer
+## Troubleshooting
 
-This project is provided for educational purposes. For any additional use or modifications, please contact the author.
+If you encounter any issues:
+
+1. **Camera not detected**
+- Ensure your webcam is properly connected
+- Check if other applications are using the camera
+- Try running the script with administrator privileges
+
+2. **Dependencies Issues**
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt --force-reinstall
+```
+
+## Performance Notes
+- Recommended to use in well-lit conditions
+- Keep your face and upper body clearly visible
+- Maintain a reasonable distance from the camera (approximately arm's length)
+
+For more details about the project, visit the [main README](../README.md).
